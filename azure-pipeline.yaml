@@ -1,14 +1,18 @@
 trigger:
   - main
 
-pool: 'ubuntu'
+pool:
+  vmImage: 'ubuntu-latest'
 
 variables:
   imageName: 'pipelines-javascript-docker'
 
 steps:
-  - task: Docker@2
-    displayName: 'Build an image'
-    inputs:
-      repository: $(imageName)
-      command: build
+- checkout: self  # Ensures the latest code is checked out
+
+- task: Docker@2
+  displayName: 'Build an image'
+  inputs:
+    repository: $(imageName)
+    dockerfile: '**/Dockerfile'  # Looks for Dockerfile in any subdirectory
+    command: build
