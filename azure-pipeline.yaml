@@ -1,3 +1,10 @@
+resources:
+  repositories:
+  - repository: 'MYGITHUB'
+    type: github
+    endpoint: https://github.com/Ganeshraja1992/ganesh-docker
+    name: Ganeshraja1992/ganesh-docker
+
 trigger:
   - main
 
@@ -9,11 +16,6 @@ variables:
 
 steps:
 - checkout: self  # Checkout the repository linked to the pipeline
-
-# Checkout an additional repository
-- checkout: 
-    repository:'https://dev.azure.com/ganeshraja0243/ganesh-test-2/_git/ganesh-docker'
-    persistCredentials:true  # Optional, but ensures credentials persist for further operations
 
 - task: Docker@2
   displayName: 'Build an image'
