@@ -13,5 +13,5 @@ steps:
   displayName: 'Build an image'
   inputs:
     repository: $(imageName)
-    dockerfile: '/root/dockerfiles'  # Looks for Dockerfile in any subdirectory
+    dockerfile: '$(Build.SourcesDirectory)/root/dockerfiles'  # Looks for Dockerfile in any subdirectory
     command: build
