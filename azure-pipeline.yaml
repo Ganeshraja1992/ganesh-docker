@@ -8,14 +8,13 @@ resources:
 trigger:
   - main
 
-pool:
-  vmImage: 'ubuntu-latest'  # Corrected pool value
+pool: 'ubuntu'
 
 variables:
   imageName: 'pipelines-javascript-docker'
 
 steps:
-- checkout: self  # Checkout the repository linked to the pipeline
+- checkout: self
 
 - task: Docker@2
   displayName: 'Build an image'
