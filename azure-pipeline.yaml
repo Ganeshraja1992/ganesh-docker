@@ -1,9 +1,9 @@
 resources:
   repositories:
-  - repository: 'MYGITHUB'
-    type: github
-    endpoint: https://github.com/Ganeshraja1992/ganesh-docker
-    name: Ganeshraja1992/ganesh-docker
+    - repository: MYGITHUB
+      type: github
+      name: Ganeshraja1992/ganesh-docker
+      ref: refs/heads/main
 
 trigger:
   - main
