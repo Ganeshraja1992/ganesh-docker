@@ -7,7 +7,7 @@ variables:
   imageName: 'pipelines-javascript-docker'
 
 steps:
-- checkout: 'http://github.com/Ganeshraja1992/ganesh-docker' # Ensures the latest code is checked out
+- checkout: 'self'
 
 - task: Docker@2
   displayName: 'Build an image'
